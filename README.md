@@ -23,10 +23,17 @@ imePayment.performPayment("MERCHANT_CODE",
                          "MERCHANT_PASSWORD",
                          new IMEPaymentCallback() {
                             @Override
-                            public void onSucess(String s) {
-                                Utils.showToast(Activity.this, "Payment Successful");
+                            public void onSucess(int ResponseCode) {
+                              //Response 100 : Payment Successful
+                              //Response 101 : Payment request sent but failed to confirm. Please check you SMS for confirmation. 
                             }
                         });
                 
 ```
+
+Response Codes on OnSuccess 
+---------------------------
+
+Response 100 : Payment Successful
+Response 101 : Payment request sent but failed to confirm. Please check you SMS for confirmation. 
 
